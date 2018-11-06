@@ -93,17 +93,14 @@ class Student
   
   def self.first_student_in_grade_10
     sql = <<-SQL 
-      SELECT id, name
+      SELECT *
       FROM students
       WHERE grade = 10
-      LIMIT 1
+      ASC LIMIT 1
       SQL
     student_array = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
-    student_array.id = student_array[0]
-    student_array.name = student_array[1]
-    student
   end
   
   def self.all_students_in_grade_X(numb)
