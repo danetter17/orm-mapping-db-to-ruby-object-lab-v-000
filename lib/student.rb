@@ -100,7 +100,6 @@ class Student
       SQL
     student_array = DB[:conn].execute(sql)
     self.new_from_db(row)
-    end
   end
   
   def self.all_students_in_grade_X(numb)
