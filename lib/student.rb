@@ -101,8 +101,8 @@ class Student
     student_array = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
-    student.id = student_array[0]
-    students.name = student_array[1]
+    student_array.id = student_array[0]
+    student_array.name = student_array[1]
     student
   end
   
