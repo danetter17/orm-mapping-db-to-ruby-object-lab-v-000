@@ -101,8 +101,8 @@ class Student
     first_student = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
-    first_student.id = first_student_array[0]
-    first_student.name = first_student_array[1]
+    first_student.id = first_student[0]
+    first_student.name = first_student[1]
   end
   
   def self.all_students_in_grade_X(numb)
