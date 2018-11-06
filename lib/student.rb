@@ -100,7 +100,7 @@ class Student
       SQL
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
-    end
+    end.flatten
   end
   
   def self.all_students_in_grade_X(numb)
@@ -111,6 +111,6 @@ class Student
       SQL
     DB[:conn].execute(sql, numb).map do |row|
       self.new_from_db(row)
-    end.flatten
+    end
   end
 end
