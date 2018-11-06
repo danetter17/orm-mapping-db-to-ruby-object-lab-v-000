@@ -95,9 +95,7 @@ class Student
     sql = <<-SQL 
       SELECT id, name
       FROM students
-      WHERE grade 
-      BETWEEN
-      9 AND 11
+      WHERE grade = 10
       LIMIT 1
       SQL
     student_array = DB[:conn].execute(sql).map do |row|
