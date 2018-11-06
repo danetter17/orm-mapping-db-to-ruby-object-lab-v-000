@@ -98,7 +98,7 @@ class Student
       WHERE grade = 10
       LIMIT 1
       SQL
-    first_student_array = DB[:conn].execute(sql).map do |row|
+    first_student = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
     first_student.id = first_student_array[0]
