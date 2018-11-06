@@ -99,8 +99,7 @@ class Student
       LIMIT 1
       SQL
     student_array = DB[:conn].execute(sql)
-    new_from_db
-  end
+  end.new_from_db
   
   def self.all_students_in_grade_X(numb)
     sql = <<-SQL
