@@ -98,9 +98,12 @@ class Student
       WHERE grade = 10
       LIMIT 1
       SQL
-    DB[:conn].execute(sql).map do |row|
+    student_array = DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
+    student.id = student_array[0]
+    students.name = student_array[1]
+    student
   end
   
   def self.all_students_in_grade_X(numb)
