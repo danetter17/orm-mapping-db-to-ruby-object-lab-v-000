@@ -96,6 +96,7 @@ class Student
       SELECT *
       FROM students
       WHERE grade = 10
+      ORDER BY name
       LIMIT 1
       SQL
     student_array = DB[:conn].execute(sql).map do |row|
